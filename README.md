@@ -1,5 +1,3 @@
-# react-ui
+# React UI
 
 React component library
-
-test
