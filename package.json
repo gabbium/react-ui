@@ -1,15 +1,49 @@
 {
   "name": "@gabbium/react-ui",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.1.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "dependencies": {
+  "author": {
+    "name": "Gabriel Abreu",
+    "url": "https://github.com/gabbium"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "typescript",
+    "react",
+    "vite"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/gabbium/react-ui#readme",
+  "bugs": {
+    "url": "https://github.com/gabbium/react-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabbium/react-ui.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  },
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -22,8 +56,11 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "prettier": "^3.6.2",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",
-    "vite": "^7.0.4"
+    "vite": "^7.0.4",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
