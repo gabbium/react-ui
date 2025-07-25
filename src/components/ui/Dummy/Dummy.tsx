@@ -9,7 +9,7 @@ export const Dummy = () => {
         fontFamily: "sans-serif",
       }}
     >
-      I'm a totally useless component!
+      I&apos;m a totally useless component!
     </div>
   );
 };
