@@ -15,12 +15,12 @@ export const createTheme = (): Theme => ({
   colors: createColors(),
 });
 
-export const lightTheme = createTheme();
+export const defaultTheme = createTheme();
 
 export const darkTheme: Theme = {
-  ...lightTheme,
+  ...defaultTheme,
   colors: {
-    ...lightTheme.colors,
+    ...defaultTheme.colors,
     background: "#111827",
     text: "#f9fafb",
     primary: "#3b82f6",

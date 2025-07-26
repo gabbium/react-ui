@@ -1,0 +1,19 @@
+:root {
+  --background: #ffffff;
+}
+
+.dark {
+  --background: #111827;
+}
+
+body {
+  background: var(--background);
+}
+
+.docblock-icongallery > div > div:first-child {
+  background: var(--background);
+}
+
+.sbdocs-preview {
+  background: var(--background) !important;
+}

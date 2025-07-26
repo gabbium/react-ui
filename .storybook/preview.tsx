@@ -1,11 +1,13 @@
 import { ThemeProvider } from "@emotion/react";
+import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react-vite";
 
-import { lightTheme, darkTheme, GlobalStyles } from "../src";
+import { defaultTheme, darkTheme, GlobalStyles } from "../src";
+
+import "./storybook.css";
 
 const withThemeProvider = (Story, context) => {
-  const mode = context?.globals?.backgrounds?.value === "dark" ? "dark" : "light";
-  const theme = mode === "dark" ? darkTheme : lightTheme;
+  const theme = context?.globals?.theme === "dark" ? darkTheme : defaultTheme;
 
   return (
     <ThemeProvider theme={theme}>
@@ -15,7 +17,16 @@ const withThemeProvider = (Story, context) => {
   );
 };
 
-export const decorators = [withThemeProvider];
+export const decorators = [
+  withThemeByClassName({
+    themes: {
+      light: "light",
+      dark: "dark",
+    },
+    defaultTheme: "light",
+  }),
+  withThemeProvider,
+];
 
 const preview: Preview = {
   tags: ["autodocs"],
@@ -23,12 +34,7 @@ const preview: Preview = {
     a11y: {
       test: "todo",
     },
-    backgrounds: {
-      options: {
-        dark: { name: "Dark", value: "#111827" },
-        light: { name: "Light", value: "#ffffff" },
-      },
-    },
+    backgrounds: { disable: true },
   },
 };
 
