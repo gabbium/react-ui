@@ -1,7 +1,6 @@
 export interface TypographyScale {
   fontSize: string;
   lineHeight: string;
-  fontWeight?: number;
 }
 
 export interface Typography {
