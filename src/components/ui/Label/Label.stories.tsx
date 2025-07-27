@@ -22,8 +22,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  play: async ({ canvas }) => {
-    const label = canvas.getByText(/Label/i);
+  play: async ({ args, canvas }) => {
+    const label = canvas.getByText(`${args.children}`);
     await expect(label).toBeVisible();
   },
 };
