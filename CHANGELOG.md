@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gabbium/react-ui/compare/v1.1.0...v1.2.0) (2025-07-27)
+
+
+### Features
+
+* add button and input components ([#5](https://github.com/gabbium/react-ui/issues/5)) ([4d4e9d3](https://github.com/gabbium/react-ui/commit/4d4e9d3c34afee08ece1161e23c74d69477ece9e))
+
 # [1.1.0](https://github.com/gabbium/react-ui/compare/v1.0.0...v1.1.0) (2025-07-26)
 
 
