@@ -1,10 +1,10 @@
-import { createColors, type Colors } from "./colors";
-import { createRadius, type Radius } from "./radius";
-import { createShadows, type Shadows } from "./shadows";
-import { createSpacing, type Spacing } from "./spacing";
-import { createTransitions, type Transitions } from "./transitions";
-import type { Typography } from "./typography";
-import { createTypography } from "./typography";
+import { createColors, type Colors } from "./tokens/colors";
+import { createRadius, type Radius } from "./tokens/radius";
+import { createShadows, type Shadows } from "./tokens/shadows";
+import { createSpacing, type Spacing } from "./tokens/spacing";
+import { createTransitions, type Transitions } from "./tokens/transitions";
+import type { Typography } from "./tokens/typography";
+import { createTypography } from "./tokens/typography";
 
 export interface Theme {
   colors: Colors;
