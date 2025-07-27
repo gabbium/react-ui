@@ -35,11 +35,6 @@ const ButtonRoot = styled("button")<ButtonProps>(({ theme, size, variant }) => (
     boxShadow: `0 0 0 3px hsl(${theme.colors.ring} / 0.5)`,
   },
 
-  "&[aria-invalid='true']": {
-    borderColor: `hsl(${theme.colors.destructive})`,
-    boxShadow: `0 0 0 3px hsl(${theme.colors.destructive} / 0.2)`,
-  },
-
   "& svg": {
     pointerEvents: "none",
     flexShrink: 0,

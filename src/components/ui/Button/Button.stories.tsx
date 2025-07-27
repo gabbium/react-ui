@@ -81,3 +81,14 @@ export const Icon: Story = {
     children: "🔗",
   },
 };
+
+export const Disabled: Story = {
+  ...Primary,
+  args: {
+    disabled: true,
+  },
+  play: async ({ args, canvas }) => {
+    const button = canvas.getByRole("button", { name: `${args.children}` });
+    await expect(button).toBeDisabled();
+  },
+};

@@ -1,3 +1,4 @@
+import { createBreakpoints, type Breakpoints } from "./tokens/breakpoints";
 import { createColors, type Colors } from "./tokens/colors";
 import { createRadius, type Radius } from "./tokens/radius";
 import { createShadows, type Shadows } from "./tokens/shadows";
@@ -13,6 +14,7 @@ export interface Theme {
   radius: Radius;
   transitions: Transitions;
   shadows: Shadows;
+  breakpoints: Breakpoints;
 }
 
 export const createTheme = (): Theme => ({
@@ -22,6 +24,7 @@ export const createTheme = (): Theme => ({
   radius: createRadius(),
   transitions: createTransitions(),
   shadows: createShadows(),
+  breakpoints: createBreakpoints(),
 });
 
 export const defaultTheme = createTheme();
@@ -38,7 +41,10 @@ export const darkTheme: Theme = {
     secondaryForeground: "0 0% 98%",
     accent: "220 12% 27%",
     accentForeground: "0 0% 98%",
+    muted: "217 15% 18%",
+    mutedForeground: "215 20% 65%",
     destructive: "5 75% 64%",
+    input: "0 0% 100% / 15%",
     border: "0 0% 100% / 10%",
     ring: "220 15% 50%",
   },
