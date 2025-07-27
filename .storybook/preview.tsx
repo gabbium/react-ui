@@ -4,7 +4,7 @@ import type { Preview } from "@storybook/react-vite";
 
 import { defaultTheme, darkTheme, GlobalStyles } from "../src";
 
-import "./storybook.css";
+import "./styles/storybook.css";
 
 const withThemeProvider = (Story, context) => {
   const theme = context?.globals?.theme === "dark" ? darkTheme : defaultTheme;
