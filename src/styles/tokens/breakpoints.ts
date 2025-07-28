@@ -4,10 +4,3 @@ export interface Breakpoints {
   lg: string;
   xl: string;
 }
-
-export const createBreakpoints = (): Breakpoints => ({
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
-});
