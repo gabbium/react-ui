@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/gabbium/react-ui/compare/v1.2.0...v1.2.1) (2025-07-28)
+
+
+### Bug Fixes
+
+* rollup peer packages and export some types ([#6](https://github.com/gabbium/react-ui/issues/6)) ([3788410](https://github.com/gabbium/react-ui/commit/378841006775913a7f92379587926aa7cf002cc0))
+
 # [1.2.0](https://github.com/gabbium/react-ui/compare/v1.1.0...v1.2.0) (2025-07-27)
 
 
