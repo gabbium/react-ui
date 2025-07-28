@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/gabbium/react-ui/compare/v1.2.2...v1.2.3) (2025-07-28)
+
+
+### Bug Fixes
+
+* resolve rollup config ([94836c6](https://github.com/gabbium/react-ui/commit/94836c69e2244d18c5e2060c5c460266c823a077))
+
 ## [1.2.2](https://github.com/gabbium/react-ui/compare/v1.2.1...v1.2.2) (2025-07-28)
 
 
