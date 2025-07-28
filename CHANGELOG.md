@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/gabbium/react-ui/compare/v1.2.1...v1.2.2) (2025-07-28)
+
+
+### Bug Fixes
+
+* add rollup external pkgs ([#7](https://github.com/gabbium/react-ui/issues/7)) ([23a66f3](https://github.com/gabbium/react-ui/commit/23a66f3578cff47951ce215ff1ee6a6d738f61d8))
+
 ## [1.2.1](https://github.com/gabbium/react-ui/compare/v1.2.0...v1.2.1) (2025-07-28)
 
 
