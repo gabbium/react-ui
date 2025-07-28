@@ -5,6 +5,8 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
 
+import PackageInfo from "./package.json";
+
 export default defineConfig({
   build: {
     lib: {
@@ -12,17 +14,7 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
-      output: {
-        entryFileNames: "[name].js",
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-          "@emotion/react": "emotionReact",
-          "@emotion/styled": "emotionStyled",
-          "@radix-ui/react-label": "radixLabel",
-        },
-      },
+      external: [...Object.keys(PackageInfo.peerDependencies)],
     },
   },
   plugins: [
