@@ -18,6 +18,9 @@ export default defineConfig({
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          "@emotion/react": "emotionReact",
+          "@emotion/styled": "emotionStyled",
+          "@radix-ui/react-label": "radixLabel",
         },
       },
     },
