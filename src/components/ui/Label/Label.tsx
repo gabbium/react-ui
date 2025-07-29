@@ -8,9 +8,9 @@ const LabelRoot = styled(LabelPrimitive.Root)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   gap: theme.spacing(2),
-  fontSize: theme.typography.textSm.fontSize,
+  fontSize: theme.typography.variants.sm.fontSize,
   lineHeight: 1,
-  fontWeight: theme.typography.fontWeightMedium,
+  fontWeight: theme.typography.weights.medium,
   userSelect: "none",
 
   ".group[data-disabled='true'] &": {

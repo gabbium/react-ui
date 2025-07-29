@@ -3,12 +3,18 @@ export interface TypographyScale {
   lineHeight: string;
 }
 
+export type FontWeights = {
+  light: number;
+  regular: number;
+  medium: number;
+  bold: number;
+};
+
+export type TypographyVariants = {
+  [key: string]: TypographyScale;
+};
+
 export interface Typography {
-  textSm: TypographyScale;
-  textMd: TypographyScale;
-  textLg: TypographyScale;
-  fontWeightLight: number;
-  fontWeightRegular: number;
-  fontWeightMedium: number;
-  fontWeightBold: number;
+  variants: TypographyVariants;
+  weights: FontWeights;
 }

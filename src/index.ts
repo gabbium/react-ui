@@ -18,7 +18,7 @@ export {
   createTransitions,
   createTypography,
   createTheme,
-} from "./styles/themes/defaultTheme";
-export { defaultTheme } from "./styles/themes/defaultTheme";
+} from "./styles/themes/baseTheme";
+export { baseTheme } from "./styles/themes/baseTheme";
 export { darkTheme } from "./styles/themes/darkTheme";
 export { GlobalStyles } from "./styles/GlobalStyles";
