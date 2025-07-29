@@ -3,7 +3,7 @@ import type { InputHTMLAttributes } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-const InputRoot = styled("input")<InputProps>(({ theme }) => ({
+const StyledInput = styled("input")(({ theme }) => ({
   display: "flex",
   height: theme.spacing(9),
   width: "100%",
@@ -56,5 +56,5 @@ const InputRoot = styled("input")<InputProps>(({ theme }) => ({
 }));
 
 export const Input = (props: InputProps) => {
-  return <InputRoot data-slot="input" {...props} />;
+  return <StyledInput data-slot="input" {...props} />;
 };

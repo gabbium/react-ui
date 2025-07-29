@@ -4,7 +4,7 @@ import type { ComponentProps } from "react";
 
 interface LabelProps extends ComponentProps<typeof LabelPrimitive.Root> {}
 
-const LabelRoot = styled(LabelPrimitive.Root)(({ theme }) => ({
+const StyledLabel = styled(LabelPrimitive.Root)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   gap: theme.spacing(2),
@@ -25,5 +25,5 @@ const LabelRoot = styled(LabelPrimitive.Root)(({ theme }) => ({
 }));
 
 export const Label = ({ ...props }: LabelProps) => {
-  return <LabelRoot data-slot="label" {...props} />;
+  return <StyledLabel data-slot="label" {...props} />;
 };

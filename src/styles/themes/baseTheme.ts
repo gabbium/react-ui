@@ -32,6 +32,14 @@ export const createColors = (): Colors => ({
   ring: "214 16% 68%",
 });
 
+export const createContainers = (): Containers => ({
+  xs: "20rem",
+  sm: "24rem",
+  md: "28rem",
+  lg: "32rem",
+  xl: "36rem",
+});
+
 export const createRadius = (): Radius => ({
   sm: "0.125rem",
   md: "0.375rem",
@@ -65,23 +73,15 @@ export const createTypography = (): Typography => ({
   },
 });
 
-export const createContainers = (): Containers => ({
-  xs: "20rem",
-  sm: "24rem",
-  md: "28rem",
-  lg: "32rem",
-  xl: "36rem",
-});
-
 export const createTheme = (): Theme => ({
-  spacing: createSpacing(),
-  typography: createTypography(),
-  colors: createColors(),
-  radius: createRadius(),
-  transitions: createTransitions(),
-  shadows: createShadows(),
   breakpoints: createBreakpoints(),
+  colors: createColors(),
   containers: createContainers(),
+  radius: createRadius(),
+  shadows: createShadows(),
+  spacing: createSpacing(),
+  transitions: createTransitions(),
+  typography: createTypography(),
 });
 
 export const baseTheme = createTheme();

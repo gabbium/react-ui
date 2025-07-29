@@ -12,7 +12,7 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["react", "react-dom", "@emotion/react", "@emotion/styled", "@radix-ui/react-label"],
+      external: ["react", "react-dom", "@emotion/react", "@emotion/styled", "@radix-ui/react-separator"],
       output: {
         entryFileNames: "[name].js",
         globals: {
@@ -21,6 +21,7 @@ export default defineConfig({
           "@emotion/react": "emotionReact",
           "@emotion/styled": "emotionStyled",
           "@radix-ui/react-label": "radixLabel",
+          "@radix-ui/react-separator": "radixSeparator",
         },
       },
     },
