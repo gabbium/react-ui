@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useId, type ComponentProps } from "react";
+import { useId, useMemo, type ComponentProps } from "react";
 
 import { FormItemContext } from "../FormItemContext";
 
@@ -13,8 +13,10 @@ const StyledFormItem = styled("div")(({ theme }) => ({
 export const FormItem = ({ ...props }: FormItemProps) => {
   const id = useId();
 
+  const value = useMemo(() => ({ id }), [id]);
+
   return (
-    <FormItemContext.Provider value={{ id }}>
+    <FormItemContext.Provider value={value}>
       <StyledFormItem data-slot="form-item" {...props} />
     </FormItemContext.Provider>
   );
