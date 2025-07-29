@@ -1,6 +1,7 @@
 import type { Theme } from "../theme";
 import type { Breakpoints } from "../tokens/breakpoints";
 import type { Colors } from "../tokens/colors";
+import type { Containers } from "../tokens/containers";
 import type { Radius } from "../tokens/radius";
 import type { Shadows } from "../tokens/shadows";
 import type { Spacing } from "../tokens/spacing";
@@ -31,11 +32,18 @@ export const createColors = (): Colors => ({
   ring: "214 16% 68%",
 });
 
+export const createContainers = (): Containers => ({
+  xs: "20rem",
+  sm: "24rem",
+  md: "28rem",
+  lg: "32rem",
+  xl: "36rem",
+});
+
 export const createRadius = (): Radius => ({
   sm: "0.125rem",
   md: "0.375rem",
   lg: "0.5rem",
-  full: "9999px",
 });
 
 export const createShadows = (): Shadows => ({
@@ -52,23 +60,28 @@ export const createTransitions = (): Transitions => ({
 });
 
 export const createTypography = (): Typography => ({
-  textSm: { fontSize: "0.875rem", lineHeight: "1.25rem" },
-  textMd: { fontSize: "1rem", lineHeight: "1.5rem" },
-  textLg: { fontSize: "1.125rem", lineHeight: "1.75rem" },
-  fontWeightLight: 300,
-  fontWeightRegular: 400,
-  fontWeightMedium: 500,
-  fontWeightBold: 700,
+  variants: {
+    sm: { fontSize: "0.875rem", lineHeight: "1.25rem" },
+    md: { fontSize: "1rem", lineHeight: "1.5rem" },
+    lg: { fontSize: "1.125rem", lineHeight: "1.75rem" },
+  },
+  weights: {
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+  },
 });
 
 export const createTheme = (): Theme => ({
-  spacing: createSpacing(),
-  typography: createTypography(),
-  colors: createColors(),
-  radius: createRadius(),
-  transitions: createTransitions(),
-  shadows: createShadows(),
   breakpoints: createBreakpoints(),
+  colors: createColors(),
+  containers: createContainers(),
+  radius: createRadius(),
+  shadows: createShadows(),
+  spacing: createSpacing(),
+  transitions: createTransitions(),
+  typography: createTypography(),
 });
 
-export const defaultTheme = createTheme();
+export const baseTheme = createTheme();

@@ -9,16 +9,16 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg" | "icon";
 }
 
-const ButtonRoot = styled("button")<ButtonProps>(({ theme, size, variant }) => ({
+const StyledButton = styled("button")<ButtonProps>(({ theme, size, variant }) => ({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
   gap: theme.spacing(2),
   whiteSpace: "nowrap",
   borderRadius: theme.radius.md,
-  fontSize: theme.typography.textSm.fontSize,
-  lineHeight: theme.typography.textSm.lineHeight,
-  fontWeight: theme.typography.fontWeightMedium,
+  fontSize: theme.typography.variants.sm.fontSize,
+  lineHeight: theme.typography.variants.sm.lineHeight,
+  fontWeight: theme.typography.weights.medium,
   transitionProperty: "all",
   transitionTimingFunction: theme.transitions.timing,
   transitionDuration: theme.transitions.duration,
@@ -147,5 +147,5 @@ const ButtonRoot = styled("button")<ButtonProps>(({ theme, size, variant }) => (
 }));
 
 export const Button = ({ variant = "primary", size = "md", ...props }: ButtonProps) => {
-  return <ButtonRoot data-slot="button" variant={variant} size={size} {...props} />;
+  return <StyledButton data-slot="button" variant={variant} size={size} {...props} />;
 };

@@ -3,7 +3,7 @@ import type { InputHTMLAttributes } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-const InputRoot = styled("input")<InputProps>(({ theme }) => ({
+const StyledInput = styled("input")(({ theme }) => ({
   display: "flex",
   height: theme.spacing(9),
   width: "100%",
@@ -13,8 +13,8 @@ const InputRoot = styled("input")<InputProps>(({ theme }) => ({
   borderWidth: "1px",
   backgroundColor: "transparent",
   padding: `${theme.spacing(1)} ${theme.spacing(3)}`,
-  fontSize: theme.typography.textMd.fontSize,
-  lineHeight: theme.typography.textMd.lineHeight,
+  fontSize: theme.typography.variants.md.fontSize,
+  lineHeight: theme.typography.variants.md.lineHeight,
   boxShadow: theme.shadows.xs,
   transitionProperty: "color,box-shadow",
   transitionTimingFunction: theme.transitions.timing,
@@ -50,11 +50,11 @@ const InputRoot = styled("input")<InputProps>(({ theme }) => ({
   },
 
   [`@media (min-width: ${theme.breakpoints.md})`]: {
-    fontSize: theme.typography.textSm.fontSize,
-    lineHeight: theme.typography.textSm.lineHeight,
+    fontSize: theme.typography.variants.sm.fontSize,
+    lineHeight: theme.typography.variants.sm.lineHeight,
   },
 }));
 
 export const Input = (props: InputProps) => {
-  return <InputRoot data-slot="input" {...props} />;
+  return <StyledInput data-slot="input" {...props} />;
 };

@@ -4,13 +4,13 @@ import type { ComponentProps } from "react";
 
 interface LabelProps extends ComponentProps<typeof LabelPrimitive.Root> {}
 
-const LabelRoot = styled(LabelPrimitive.Root)(({ theme }) => ({
+const StyledLabel = styled(LabelPrimitive.Root)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   gap: theme.spacing(2),
-  fontSize: theme.typography.textSm.fontSize,
+  fontSize: theme.typography.variants.sm.fontSize,
   lineHeight: 1,
-  fontWeight: theme.typography.fontWeightMedium,
+  fontWeight: theme.typography.weights.medium,
   userSelect: "none",
 
   ".group[data-disabled='true'] &": {
@@ -25,5 +25,5 @@ const LabelRoot = styled(LabelPrimitive.Root)(({ theme }) => ({
 }));
 
 export const Label = ({ ...props }: LabelProps) => {
-  return <LabelRoot data-slot="label" {...props} />;
+  return <StyledLabel data-slot="label" {...props} />;
 };

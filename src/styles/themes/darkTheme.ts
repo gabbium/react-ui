@@ -1,11 +1,11 @@
 import type { Theme } from "../theme";
 
-import { defaultTheme } from "./defaultTheme";
+import { baseTheme } from "./baseTheme";
 
 export const darkTheme: Theme = {
-  ...defaultTheme,
+  ...baseTheme,
   colors: {
-    ...defaultTheme.colors,
+    ...baseTheme.colors,
     background: "222 47% 11%",
     text: "0 0% 98%",
     primary: "210 12% 92%",

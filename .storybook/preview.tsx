@@ -2,12 +2,12 @@ import { ThemeProvider } from "@emotion/react";
 import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react-vite";
 
-import { defaultTheme, darkTheme, GlobalStyles } from "../src";
+import { baseTheme, darkTheme, GlobalStyles } from "../src";
 
 import "./styles/storybook.css";
 
 const withThemeProvider = (Story, context) => {
-  const theme = context?.globals?.theme === "dark" ? darkTheme : defaultTheme;
+  const theme = context?.globals?.theme === "dark" ? darkTheme : baseTheme;
 
   return (
     <ThemeProvider theme={theme}>
