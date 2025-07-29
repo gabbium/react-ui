@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/gabbium/react-ui/compare/v1.2.3...v1.3.0) (2025-07-29)
+
+
+### Features
+
+* add form and separator components ([#8](https://github.com/gabbium/react-ui/issues/8)) ([72eaf74](https://github.com/gabbium/react-ui/commit/72eaf741d19a05d9590954ec0d7dae71cd3acc13))
+
 ## [1.2.3](https://github.com/gabbium/react-ui/compare/v1.2.2...v1.2.3) (2025-07-28)
 
 
