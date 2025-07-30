@@ -92,3 +92,17 @@ export const Disabled: Story = {
     await expect(button).toBeDisabled();
   },
 };
+
+export const AsChild: Story = {
+  ...Primary,
+  render: (args) => (
+    <Button asChild {...args}>
+      <div>Div styled as button</div>
+    </Button>
+  ),
+  play: async ({ args, canvas, userEvent }) => {
+    const button = canvas.getByText("Div styled as button");
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalled();
+  },
+};

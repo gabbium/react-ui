@@ -1,7 +1,11 @@
 import styled from "@emotion/styled";
+import { Slot } from "@radix-ui/react-slot";
 import type { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Replaces the default element with the provided child component */
+  asChild?: boolean;
+
   /** Sets the visual style of the button */
   variant?: "primary" | "secondary" | "destructive" | "outline" | "ghost" | "link";
 
@@ -146,6 +150,8 @@ const StyledButton = styled("button")<ButtonProps>(({ theme, size, variant }) =>
   }),
 }));
 
-export const Button = ({ variant = "primary", size = "md", ...props }: ButtonProps) => {
-  return <StyledButton data-slot="button" variant={variant} size={size} {...props} />;
+export const Button = ({ asChild = false, variant = "primary", size = "md", ...props }: ButtonProps) => {
+  const Comp = asChild ? Slot : "button";
+
+  return <StyledButton as={Comp} data-slot="button" variant={variant} size={size} {...props} />;
 };
