@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/gabbium/react-ui/compare/v1.3.0...v1.4.0) (2025-07-30)
+
+
+### Features
+
+* button as child and updated form docs ([#9](https://github.com/gabbium/react-ui/issues/9)) ([a69fe45](https://github.com/gabbium/react-ui/commit/a69fe4589fe4c46934a6b389562575ca2e32da1d))
+
 # [1.3.0](https://github.com/gabbium/react-ui/compare/v1.2.3...v1.3.0) (2025-07-29)
 
 
