@@ -1,0 +1,67 @@
+name: CI Pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+env:
+  CI: true
+
+jobs:
+  quality-checks:
+    name: Code Quality & Testing
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: mcr.microsoft.com/playwright:v1.55.0-noble
+
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+          cache: "npm"
+
+      - name: Install SonarScanner
+        run: npm install -g sonarqube-scanner
+
+      - name: Install dependencies
+        run: |
+          npm cache clean --force
+          rm -rf node_modules package-lock.json
+          npm install
+
+      - name: Check formatting
+        run: npm run prettier
+
+      - name: Lint code
+        run: npm run lint
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run tests
+        run: npm run test:coverage
+
+      - name: Upload analysis to SonarCloud
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey=gabbium_react-ui \
+            -Dsonar.projectName=react-ui \
+            -Dsonar.organization=gabbium \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+            -Dsonar.exclusions=**/*.stories.ts,**/*.stories.tsx,vite.config.ts
